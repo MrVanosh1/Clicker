@@ -7,14 +7,15 @@ public class GameplayScreen extends AbstractScreen {
 
 	private Player player;
 	
-	public GameplayScreen(ClickerGame game) {
-		super(game);
-		init();
-	}
-
-	private void init() {
+	@Override
+	protected void init() {
 		initPlayer();
 	}
+	
+	public GameplayScreen(ClickerGame game) {
+		super(game);
+	}
+
 
 	private void initPlayer() {
 		player = new Player();

@@ -12,7 +12,6 @@ public class SplashScreen extends AbstractScreen {
 	
 	public SplashScreen(final ClickerGame game) {
 		super(game);
-		init();
 		Timer.schedule(new Task() {
 			
 			@Override
@@ -21,8 +20,9 @@ public class SplashScreen extends AbstractScreen {
 			}
 		}, 1);
 	}
-
-	private void init() {
+	
+	@Override
+	protected void init() {
 		// TODO IMPLEMENT BETTER ASSETS LOADING WHEN GAME GROWS
 		splashImg = new Texture("badlogic.jpg");
 	}
