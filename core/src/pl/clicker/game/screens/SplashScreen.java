@@ -1,6 +1,8 @@
 package pl.clicker.game.screens;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.utils.Timer;
+import com.badlogic.gdx.utils.Timer.Task;
 
 import pl.clicker.game.ClickerGame;
 
@@ -8,9 +10,16 @@ public class SplashScreen extends AbstractScreen {
 
 	private Texture splashImg;
 	
-	public SplashScreen(ClickerGame game) {
+	public SplashScreen(final ClickerGame game) {
 		super(game);
 		init();
+		Timer.schedule(new Task() {
+			
+			@Override
+			public void run() {
+				game.setScreen(new GameplayScreen(game));
+			}
+		}, 1);
 	}
 
 	private void init() {
